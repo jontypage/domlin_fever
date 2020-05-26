@@ -1306,7 +1306,7 @@ def main(_):
       output_predict_file = os.path.join(FLAGS.output_dir, "test_results.tsv")
     else:
       output_predict_file = FLAGS.file_test_results
-    with tf.gfile.GFile(output_predict_file, "w") as writer:
+    with tf.gfile.GFile(output_predict_file, "a") as writer:
       tf.logging.info("***** Predict results *****")
       for prediction in result:
         output_line = "\t".join(
